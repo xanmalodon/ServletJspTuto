@@ -22,6 +22,10 @@ public class AddServlet extends HttpServlet{
 		PrintWriter out = res.getWriter();
 		out.println("la réponse vaut "+ k);
 		
+		// session management
+		k = k*k ; 
+		req.setAttribute("k", k);
+		
 		RequestDispatcher rd = req.getRequestDispatcher("sq");
 		rd.forward(req, res);
 		

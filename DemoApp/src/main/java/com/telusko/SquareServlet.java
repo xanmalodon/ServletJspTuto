@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 public class SquareServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		
+		int k = (int) req.getAttribute("k");
+
 		PrintWriter out = res.getWriter();
-		out.println("Hello to Sq");
+		out.println("Le resulat du carre de la somme vaut "+k);
 	}
 }
