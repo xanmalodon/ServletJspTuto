@@ -22,12 +22,13 @@ public class AddServlet extends HttpServlet{
 		PrintWriter out = res.getWriter();
 		out.println("la réponse vaut "+ k);
 		
+		res.sendRedirect("sq?k="+k); // URL Rewriting
 		// session management
-		k = k*k ; 
-		req.setAttribute("k", k);
+//		k = k*k ; 
+//		req.setAttribute("k", k);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+//		RequestDispatcher rd = req.getRequestDispatcher("sq");
+//		rd.forward(req, res);
 		
 	}
 	
