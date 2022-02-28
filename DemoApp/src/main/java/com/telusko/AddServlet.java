@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 
@@ -22,13 +23,11 @@ public class AddServlet extends HttpServlet{
 		PrintWriter out = res.getWriter();
 		out.println("la réponse vaut "+ k);
 		
-		res.sendRedirect("sq?k="+k); // URL Rewriting
-		// session management
-//		k = k*k ; 
-//		req.setAttribute("k", k);
+		HttpSession session = req.getSession();
+		session.setAttribute("k", k);
 		
-//		RequestDispatcher rd = req.getRequestDispatcher("sq");
-//		rd.forward(req, res);
+		res.sendRedirect("sq"); // URL Rewriting ici, on passe par le navigateur
+
 		
 	}
 	
