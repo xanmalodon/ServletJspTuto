@@ -27,4 +27,17 @@
 	<url-pattern>/sq</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>MyServlet</servlet-name>
+	<servlet-class>com.telusko.MyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>MyServlet</servlet-name>
+	<url-pattern>/serv</url-pattern>
+</servlet-mapping>
+
+<context-param>
+	<param-name>Phone</param-name>
+	<param-value>Samsung</param-value>
+</context-param>
 </web-app>
