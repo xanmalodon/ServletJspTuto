@@ -1,6 +1,7 @@
 package com.telusko;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,17 +21,11 @@ public class AddServlet extends HttpServlet{
 		int k = i + j;
 		System.out.println("la réponse vaut "+ k);// affiche dans la console
 		
-		Cookie cookie = new Cookie("k",k+"");
-		res.addCookie(cookie);
 		
-//		PrintWriter out = res.getWriter();
-//		out.println("la réponse vaut "+ k);
-//		
-//		HttpSession session = req.getSession();
-//		session.setAttribute("k", k);
-		
-		res.sendRedirect("sq"); // URL Rewriting ici, on passe par le navigateur
-
+		PrintWriter out = res.getWriter();
+		out.println("<html><body bgcolor='cyan'>");
+		out.println("output "+ k);
+		out.println("</body></html>");
 		
 	}
 	
